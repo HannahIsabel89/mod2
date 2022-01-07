@@ -1,0 +1,32 @@
+.body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: azure;
+  align-items: center;
+
+}
+
+.img {
+  height: 150px;
+  border-radius: 30%;
+}
+
+.home {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.topics {
+  display: block;
+  padding-top: 50px;
+  text-align: center
+
+}
