@@ -1,13 +1,25 @@
 .body {
+  margin: 25px;
   font-family: 'Montserrat', sans-serif;
-  background-color: azure;
   align-items: center;
+  background-image: url("./cool-background.png") no-repeat center center ;
+  background-size: cover;
+  display: block;
+  width: 70%;
+}
+
+.structureDisplay {
+  display: flex;
+  justify-content: center;
 
 }
 
 .img {
   height: 150px;
   border-radius: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home {
@@ -20,6 +32,14 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
+h3 {
+  padding-top: 15px;
+}
+
 p {
   text-align: center;
 }
@@ -30,3 +50,22 @@ p {
   text-align: center
 
 }
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.adding {
+  text-align: left;
+  padding: 0 15px 0 0;
+}
+
+

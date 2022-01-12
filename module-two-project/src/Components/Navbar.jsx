@@ -4,12 +4,12 @@ import { NavLink } from 'react-router-dom';
 
 const link = {
   width: '100px',
-  padding: '12px',
+  padding: '20px',
   margin: '0 6px 6px',
   background: 'blue',
   textDecoration: 'none',
   color: 'white',
-  
+  borderRadius: '10%',
 }
 
 class Navbar extends React.Component {
@@ -26,7 +26,7 @@ class Navbar extends React.Component {
           activeStyle={{
             background: 'darkblue'
           }}
-        >Home</NavLink>
+        ><i class="fa fa-home"></i></NavLink>
         <NavLink
           to="/about"
           exact
@@ -34,7 +34,7 @@ class Navbar extends React.Component {
           activeStyle={{
             background: 'darkblue'
           }}
-        >About</NavLink>
+        ><i class="fa fa-info" ></i></NavLink>
       </div>
     )
   }
