@@ -8,13 +8,18 @@ class About extends React.Component {
         <h1>About this app.</h1>
         <div className="aboutDiv">
           <h2>Purpose of the app:</h2>
-          <p>The goal of the application was to provive teachers with a tool they could use in class to brainstorm topics with students.  Once given the website, students can access with a comouter, tablet or phone to save their answers in the database.</p>
+          <p>
+            The goal of the application was to provide teachers with a
+            brainstorming tool to use in class. The website would be projected
+            onto a smartboard, students can then access with a computer, tablet
+            or phone to save their answers in the database.
+          </p>
         </div>
         <p>To see more about the author click on the links below.</p>
         <div className="socials">
-        <i className="fab fa-github"></i>
-        <i className="fab fa-linkedin-in"></i>
-        <i className="fab fa-medium"></i>
+          <a href="https://github.com/HannahIsabel89" class="fa fa-github"></a>
+          <a href="https://www.linkedin.com/in/hannah-isabel-woodward" class="fab fa-linkedin-in"></a>
+          <a href="https://hannahisabelwoodward.medium.com" class="fa fa-medium"></a>
         </div>
       </>
     );

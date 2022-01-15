@@ -1,3 +1,6 @@
+* {
+  font-size: 1.3rem;
+}
 .body {
   margin: 25px;
   font-family: 'Montserrat', sans-serif;
@@ -9,8 +12,8 @@
 }
 
 .structureDisplay {
-  display: flex;
-  justify-content: center;
+  margin: 2% 7% 0 7%;
+  text-align: center;
 
 }
 
@@ -38,9 +41,15 @@ h2 {
 
 h3 {
   padding-top: 15px;
+  text-align: center;
 }
 
 p {
+  text-align: center;
+}
+
+ul {
+  padding: 5px;
   text-align: center;
 }
 
@@ -53,7 +62,9 @@ p {
 
 .column {
   float: left;
-  width: 50%;
+  width: 40%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 /* Clear floats after the columns */
@@ -65,7 +76,23 @@ p {
 
 .adding {
   text-align: left;
-  padding: 0 15px 0 0;
+  margin-right: 5px;
+}
+
+.aboutDiv{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 4%;
+  font-size: 2em;
+}
+
+a {
+  color: black;
 }
 
 

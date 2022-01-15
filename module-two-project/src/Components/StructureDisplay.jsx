@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import firebase from "../Components/Firebase";
+import { doc, updateDoc } from "firebase/firestore";
 
 const StructureDisplay = () => {
   const { structureID } = useParams();
@@ -22,49 +23,66 @@ const StructureDisplay = () => {
     });
   }, []);
 
+  const updateStructure = async (e) => {
+    e.preventDefault();
+    const structureRef = doc(firebase.firestore(), "BusinessStructures", newID);
+    const updatedStructure = {
+      [e.target.name]: [...structure[e.target.name], e.target.inputField.value],
+    };
+    console.log(updatedStructure);
+    // Set the "capital" field of the city 'DC'
+    try {
+      const success = await updateDoc(structureRef, updatedStructure);
+      setStructure({ ...structure, ...updatedStructure });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
-      <h1>{structure?.Title}</h1>
       <div className="structureDisplay">
+        <h1>{structure?.Title}</h1>
         <img src={structure?.img} alt={structure?.Title} className="img"></img>
-      </div>
-      <h3>{structure?.about}</h3>
-
-      <div classname="column">
-        <h2>Advantages</h2>
-        <div>
-          {structure?.Advantages.map((advantage) => (
-            <li>{advantage}</li>
-          ))}
+        <p>{structure?.about}</p>
+        <div className="column">
+          <h2>Advantages</h2>
+          <div>
+            {structure?.Advantages.map((advantage) => (
+              <ul>{advantage}</ul>
+            ))}
+          </div>
+          <form name="Advantages" onSubmit={updateStructure}>
+            <span>
+              <input
+                type="text"
+                className="adding"
+                placeholder="Add a advantage"
+                id="inputField"
+              />
+              <input type="submit" value="Submit" />
+            </span>
+          </form>
         </div>
-        <form onSubmit={console.log("Submit button pressed")}>
-          <span>
-            <input
-              type="text"
-              className="adding"
-              placeholder="Add a advantage"
-            />
-            <input type="submit" value="Submit" />
-          </span>
-        </form>
-      </div>
-      <div classname="column">
-        <h2>Disadvantages</h2>
-        <div>
-          {structure?.Disadvantages.map((disadvantage) => (
-            <li>{disadvantage}</li>
-          ))}
+        <div className="column">
+          <h2>Disadvantages</h2>
+          <div>
+            {structure?.Disadvantages.map((disadvantage) => (
+              <ul>{disadvantage}</ul>
+            ))}
+          </div>
+          <form name="Disadvantages" onSubmit={updateStructure}>
+            <span>
+              <input
+                type="text"
+                className="adding"
+                placeholder="Add a disadvantage"
+                id="inputField"
+              />
+              <input type="submit" value="Submit" />
+            </span>
+          </form>
         </div>
-        <form onSubmit={console.log("Submit button pressed")}>
-          <span>
-            <input
-              type="text"
-              className="adding"
-              placeholder="Add a disadvantage"
-            />
-            <input type="submit" value="Submit" />
-          </span>
-        </form>
       </div>
     </>
   );
